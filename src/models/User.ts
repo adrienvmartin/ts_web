@@ -5,4 +5,8 @@ interface UserProps {
 
 export class user {
   constructor(private data: UserProps) {}
+
+  get(propName: string): string | number {
+    return this.data[propName];
+  }
 }
