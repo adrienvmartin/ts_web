@@ -3,7 +3,7 @@ interface UserProps {
   age: number;
 }
 
-export class user {
+export class User {
   constructor(private data: UserProps) {}
 
   get(propName: string): string | number {
