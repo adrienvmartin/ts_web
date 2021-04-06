@@ -1,13 +1,11 @@
-import axios, { AxiosResponse } from 'axios';
+import axios, { AxiosPromise, AxiosResponse } from 'axios';
 import { UserProps } from './User';
 
 export class Sync {
   constructor(public rootUrl: string) {}
 
-  fetch(id: number): void {
-    axios.get(`${this.rootUrl}/${id}`).then((response: AxiosResponse): void => {
-      this.set(response.data);
-    });
+  fetch(id: number): AxiosPromise {
+    return axios.get(`${this.rootUrl}/${id}`);
   }
 
   save(data: UserProps): void {
